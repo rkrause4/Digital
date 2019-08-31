@@ -1,0 +1,49 @@
+.container {
+  width: 70%;
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 0.9rem;
+}
+
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 2.75rem;
+}
+h3 {
+  font-size: 2.5rem;
+}
+h4 {
+  font-size: 2rem;
+}
+h5 {
+  font-size: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $heading-grey;
+  font-family: 'Cabin', sans-serif;
+}
+
+h2 {
+  padding-bottom: 1.25rem;
+}
+
+p {
+  font-family: 'Cabin Condensed', sans-serif;
+  color: $paragraph-grey;
+  line-height: 1.5;
+}
+
+section:not(.hero) {
+  margin-bottom: 10rem;
+}

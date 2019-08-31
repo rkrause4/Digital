@@ -1,0 +1,790 @@
+@import '_partials/mod_dir';
+
+body {
+  font-family: 'Cabin', sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  background: $lavender-primary;
+  height: 2.75rem;
+  padding: 1.5rem 0;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .show-nav {
+    width: 46px;
+    height: 46px;
+    padding: 0.5rem;
+    position: absolute;
+    left: 81%;
+    display: none;
+  }
+
+  label {
+    position: absolute;
+    left: 81%;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 44px;
+    height: 44px;
+    padding: 0.5rem;
+    display: none;
+    span {
+      display: block;
+      height: 4px;
+      width: 28px;
+      background: $white;
+    }
+
+    span:not(:first-child) {
+      margin-top: 8px;
+    }
+  }
+  .navbar {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .nav-brand,
+    .nav-item {
+      display: inline-block;
+      color: $white;
+
+      a {
+        color: $white;
+      }
+    }
+
+    .nav-brand {
+      margin-right: auto;
+      height: 44px;
+      font-size: 2rem;
+      i {
+        padding-right: 0.625rem;
+      }
+    }
+
+    .nav-item {
+      i {
+        padding: 0 0.3rem;
+        transition: all 0.6s ease;
+        font-size: 0.8rem;
+      }
+      a {
+        display: block;
+        padding: 0.75rem;
+        transition: all 0.4s ease;
+        text-decoration: none;
+      }
+    }
+
+    .nav-item:hover {
+      a {
+        color: $grey-white;
+      }
+    }
+
+    .nav-btn {
+      cursor: pointer;
+      margin-left: 0.75rem;
+      background: $white;
+      @include loginBtnShadowDefault;
+      a {
+        color: $lavender-primary;
+      }
+    }
+
+    .nav-btn:hover {
+      @include loginBtnShadowHover;
+      a {
+        color: $lavender-primary;
+      }
+    }
+
+    .dropdown {
+      transition: all 0.4s ease;
+      position: relative;
+      .dropdown-menu {
+        background: $white;
+        list-style: none;
+        position: absolute;
+        display: none;
+        padding: 0.8rem 0.5rem;
+        width: 12rem;
+        max-width: 200px;
+        @include dropdownShadow;
+
+        .dropdown-item {
+          //   padding: 0.5rem;
+          a {
+            color: $charcoal !important;
+          }
+        }
+        .dropdown-item:hover {
+          a {
+            color: $lavender-primary !important;
+          }
+        }
+      }
+    }
+
+    .dropdown:hover {
+      i {
+        transform: rotate(-180deg);
+      }
+      .dropdown-menu {
+        display: block;
+      }
+    }
+  }
+}
+
+.hero {
+  background: $lavender-primary;
+  height: 73vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+
+  .hero-content-1 {
+    padding: 1rem;
+    h1 {
+      font-size: 2.5rem;
+      color: $white;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: $off-grey;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .hero-btn {
+    border: 2px solid $white;
+    padding: 0.75rem 1rem;
+    color: $white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+  }
+  .hero-btn:first-of-type {
+    margin-right: 1rem;
+  }
+
+  .hero-btn:hover {
+    background: $white;
+    color: $lavender-primary;
+  }
+}
+
+.about-us {
+  height: 100%;
+  margin: 6rem 0;
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-gap: 2rem;
+  }
+  h2,
+  h3 {
+    color: $heading-grey;
+  }
+
+  h2 {
+    font-size: 2.75rem;
+  }
+  .about-us-content-2 {
+    h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      font-size: 1.125rem;
+      color: $paragraph-grey;
+      line-height: 1.5;
+    }
+  }
+}
+
+.services {
+  .services-card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    margin-top: 2rem;
+
+    .services-card {
+      text-align: left;
+      padding: 0.75rem;
+      @include servicesCardShadow;
+
+      i {
+        font-size: 3rem;
+        margin: 1rem 0;
+      }
+      h3 {
+        font-size: 2rem;
+      }
+
+      p {
+        color: $paragraph-grey;
+        padding: 1rem 0;
+      }
+    }
+
+    .services-content-1 {
+      i {
+        color: $card-pink;
+      }
+    }
+    .services-content-2 {
+      i {
+        color: $card-blue;
+      }
+    }
+    .services-content-3 {
+      i {
+        color: $card-green;
+      }
+    }
+    .services-content-4 {
+      i {
+        color: $card-orange;
+      }
+    }
+  }
+}
+
+.marketing-process {
+  .marketing-process-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    text-align: center;
+    .marketing-process-card {
+      img {
+        width: 100%;
+      }
+
+      h5 {
+        font-size: 1.75rem;
+        margin: 0.5rem 0;
+      }
+
+      p {
+        text-align: left;
+        line-height: 1.5;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+.digital-marketing {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-gap: 2rem;
+
+    p {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.portfolio {
+  .work-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    padding: 2rem 0;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.marketing-partners {
+  background: $pink;
+  padding: 3rem 0;
+  margin-bottom: 0 !important;
+  h2 {
+    color: $white;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    li {
+      display: inline-block;
+
+      i {
+        font-size: 3.75rem;
+        color: $white;
+        padding: 0.5rem 2.5rem;
+      }
+    }
+  }
+}
+
+.footer {
+  background: $charcoal;
+  padding: 3rem 0 0 0;
+
+  .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2.5rem;
+
+    h4 {
+      color: $off-grey;
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      padding-bottom: 0.75rem;
+    }
+
+    i {
+      padding: 0 0.4rem 0 0;
+    }
+
+    p {
+      padding: 0.25rem 0;
+    }
+
+    .footer-small-text {
+      font-size: 0.8rem;
+      font-style: italic;
+    }
+    .footer-bright-text {
+      font-size: 1.1rem;
+      color: $footer-bright-grey;
+    }
+
+    .footer-col-4 {
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          a {
+            transition: all 0.3s ease;
+            color: $paragraph-grey;
+            text-decoration: none;
+            padding: 0.5rem 0.5rem 0.5rem 0;
+            display: block;
+          }
+
+          a:hover {
+            color: $grey;
+          }
+        }
+      }
+    }
+  }
+
+  .legal-text {
+    border-top: 1px solid $grey;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    a {
+      color: $off-grey;
+      text-decoration: none;
+    }
+    .to-top-btn {
+      background: $heading-grey;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      i {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 80%;
+  }
+  h2 {
+    font-size: 2rem !important;
+  }
+  .hero {
+    height: 100%;
+    .container {
+      grid-template-columns: 1fr;
+
+      .hero-content-1 {
+        text-align: center;
+        h1 {
+          font-size: 2.25rem;
+        }
+
+        .hero-btn {
+          text-align: center;
+          display: inline-block;
+        }
+      }
+      .hero-content-2 {
+        text-align: center;
+      }
+    }
+  }
+
+  .about-us {
+    .container {
+      grid-template-columns: 1fr 3fr 2fr;
+      grid-gap: 1rem;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .services {
+    .services-card-container {
+      grid-template-columns: repeat(2, 2fr);
+    }
+  }
+
+  .portfolio {
+    .work-container {
+      grid-template-columns: repeat(2, 2fr);
+    }
+  }
+
+  #partners {
+    margin: 0;
+  }
+  .marketing-partners {
+    ul {
+      li {
+        i {
+          padding: 0.5rem 2rem;
+        }
+      }
+    }
+  }
+}
+
+// Media Query for Mobile Nav ===============================================================================================================================
+@media (max-width: 840px) {
+  nav {
+    .show-nav {
+      left: 84.5%;
+    }
+    label {
+      left: 84.5%;
+      z-index: 11;
+      display: block !important;
+    }
+
+    .navbar {
+      z-index: 5;
+      .nav-item {
+        display: none;
+      }
+      .nav-brand {
+        transition: all 0.3s ease;
+        z-index: 11;
+        padding-left: 0.5rem;
+      }
+    }
+
+    .show-nav:checked + label {
+      span {
+        background: $lavender-primary;
+      }
+    }
+    .show-nav:checked + label + .navbar {
+      z-index: 5;
+      background: $white;
+      position: relative;
+      text-align: left;
+
+      .nav-brand {
+        color: $lavender-primary !important;
+        i {
+          color: $lavender-primary !important;
+        }
+      }
+      .nav-item {
+        a {
+          color: $charcoal;
+        }
+        a:hover {
+          color: $lavender-primary;
+        }
+      }
+      .nav-btn {
+        box-shadow: none;
+        display: block;
+        width: 100%;
+        margin: 0;
+      }
+
+      transition: all 0.3s ease;
+      height: 100%;
+      display: block;
+      li {
+        display: block;
+
+        .nav-btn {
+          background: none;
+          border: none;
+        }
+      }
+      .dropdown {
+        i {
+          display: none !important;
+        }
+        .dropdown-menu {
+          display: block;
+          position: relative;
+          background: none;
+          box-shadow: none;
+
+          .dropdown-menu-item {
+            a {
+              color: $white;
+            }
+            a:hover {
+              background: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+  .hero {
+    z-index: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+  .nav {
+    border: none;
+  }
+  .hero {
+    .hero-content-1 {
+      h1 {
+        font-size: 2.25rem;
+      }
+    }
+  }
+
+  .about-us {
+    .container {
+      grid-template-columns: 1fr;
+
+      .about-us-content-3 {
+        text-align: center;
+        img {
+          width: 75%;
+        }
+      }
+    }
+  }
+
+  .marketing-process {
+    .marketing-process-container {
+      grid-template-columns: repeat(2, 2fr);
+    }
+  }
+
+  .digital-marketing {
+    .container {
+      grid-template-columns: 2fr;
+
+      .digital-marketing-content-2 {
+        text-align: center;
+      }
+    }
+  }
+
+  .marketing-partners {
+    ul {
+      li {
+        i {
+          padding: 0.5rem 1.5rem;
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+
+  .footer {
+    .footer-columns {
+      grid-template-columns: repeat(2, 2fr);
+    }
+
+    .legal-text {
+      p,
+      a {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  section {
+    text-align: center;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  h2 {
+    text-align: center;
+  }
+  section:not(:first-child) {
+    margin-bottom: 4rem;
+  }
+  .hero {
+    .container {
+      p {
+        margin-bottom: 0.5rem;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .about-us {
+    margin-top: 0;
+
+    .about-us-content-2 {
+      h3 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .services {
+    .services-card-container {
+      margin: auto;
+      grid-template-columns: 2fr;
+
+      .services-card {
+        text-align: center;
+      }
+    }
+  }
+
+  .marketing-process {
+    .marketing-process-container {
+      grid-template-columns: 2fr;
+
+      .marketing-process-card {
+        text-align: center;
+
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .digital-marketing {
+    .container {
+      grid-template-columns: 2fr;
+    }
+    .digital-marketing-content-2 {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .portfolio {
+    .work-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  .marketing-partners {
+    margin-bottom: 0 !important;
+  }
+
+  .footer {
+    .footer-columns {
+      grid-template-columns: 3fr;
+    }
+
+    .legal-text {
+      .to-top-btn {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 325px) {
+  .hero {
+    .hero-content-1 {
+      text-align: center;
+      .hero-btn:first-child {
+        margin-right: 0 !important;
+      }
+      .hero-btn {
+        display: block;
+        margin: 1rem 0;
+      }
+    }
+  }
+
+  .marketing-partners {
+    ul {
+      li {
+        i {
+          //   font-size: 1rem;
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
+  }
+}
